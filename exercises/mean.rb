@@ -23,10 +23,21 @@ require_relative './sum'
 
 def mean(list)
   total = sum(list) # This is the "sum" method from our sum.rb file
-  # result = ____   # Given we have the sum of the list, how can we calculate the average?
+
+  if list.count == 0
+    warn "Cannot calculate mean of empty array"
+    return 0
+  else
+    result = total / list.count
+    return result
+  end
 end
 
 if __FILE__ == $0
   # I'd advise putting some sanity checks here.
   # How else will you be sure your code does what you think it does?
+  p mean([]) == 0
+  p mean([1]) == 1
+  p mean([1, 4, 10]) == 5
+  p mean([-10, 0]) == -5
 end
