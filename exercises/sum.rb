@@ -20,7 +20,7 @@
 #   total = total + 70   # the value of "total" is now 102
 
 def sum(list)
-  # This is your job. :)
+  list.inject(:+)
 end
 
 if __FILE__ == $0
